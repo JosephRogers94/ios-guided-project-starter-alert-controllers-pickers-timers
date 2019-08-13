@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CountdownDelegate: AnyObject {
-    func countdownDidUpdate(timeRemaining: TimeInterval)
+    func countdownDidUpdate(timeRemaining: TimeInterval) 
     func countdownDidFinish()
 }
 
