@@ -21,15 +21,11 @@ class CountdownViewController: UIViewController {
     private let countdown = Countdown()
     
     var dateFormatter: DateFormatter = {
-        
         let formatter = DateFormatter()
-        
         formatter.dateFormat = "HH:mm:ss.SS"
-        
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        
         return formatter
-    }()
+    }() //why do we init this at the end?
     
     private var duration: TimeInterval {
         let minuteString = countdownPicker.selectedRow(inComponent: 0)
@@ -94,8 +90,6 @@ class CountdownViewController: UIViewController {
     
     private func updateViews() {
         startButton.isEnabled = true
-        
-        
         switch countdown.state {
         case .started:
             timeLabel.text = string(from: countdown.timeRemaining)
